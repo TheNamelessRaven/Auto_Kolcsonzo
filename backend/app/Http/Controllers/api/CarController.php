@@ -70,7 +70,7 @@ class CarController extends Controller
         else {
         $updatecar->fill($request->all());
         $updatecar->save();
-        return response()->json($updatecar,202);
+        return response()->json($updatecar,200);
         }
     }
 
@@ -87,17 +87,18 @@ class CarController extends Controller
     public function rent(Request $request, $id){
         $carrent=Car::find($id);
         //return response()->json('rent',200);
-        if(!$carrent==isEmpty()){
-            return response()->json('Ezen az indexen nem található autó',404);
+        if(empty($carrent)){
+            return response()->json(["message"=>'Ezen az indexen nem található autó'],404);
         }
         $rent=date("Y-m-d",strtotime('+2 hours'));
         //return response()->json($rent);
         $rented=Rental::where(
             ["car_id"=>$id],
-            ["end_date",">=",date("Y-m-d",strtotime($rent."-7 days"))], // Végdátum kisebb vagy egyenlő mint mostani idő 7 nappal
+            ["start_date","<=",date("Y-m-d")],
+            ["end_date",">=",date("Y-m-d")], 
         )->get();
         //return response()->json(Rental::where('end_date'));
-        if(!$rented->isEmpty()){
+        if(!$rented){
             return response()->json(["message"=>"Az adott kocsi le van foglalva"],409);
         }
             $newrent=new Rental();
