@@ -90,7 +90,7 @@ class CarController extends Controller
         if(empty($carrent)){
             return response()->json(["message"=>'Ezen az indexen nem található autó'],404);
         }
-        $rent=date("Y-m-d",strtotime('+2 hours'));
+        $rent=date("Y-m-d");
         //return response()->json($rent);
         $rented=Rental::where(
             ["car_id"=>$id],
