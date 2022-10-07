@@ -94,11 +94,11 @@ class CarController extends Controller
         //return response()->json($rent);
         $rented=Rental::where(
             ["car_id"=>$id],
-            ["start_date","<=",date("Y-m-d")],
+            //["start_date","<=",date("Y-m-d")],
             ["end_date",">=",date("Y-m-d")], 
         )->get();
         //return response()->json(Rental::where('end_date'));
-        if(!$rented){
+        if(!$rented->isEmpty()){
             return response()->json(["message"=>"Az adott kocsi le van foglalva"],409);
         }
             $newrent=new Rental();
