@@ -1,0 +1,18 @@
+﻿<Window x:Class="KocsikApp.CarsGUI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KocsikApp"
+        mc:Ignorable="d"
+        Title="CarsGUI" Height="450" Width="800" WindowState="Minimized" Loaded="Window_Loaded">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" x:Name="btn_del" Content="Törlés" HorizontalAlignment="Left"  VerticalAlignment="Top" Click="btn_del_Click"/>
+        <ListBox Grid.Row="1" x:Name="CarList" FontFamily="Courier New"/>
+
+    </Grid>
+</Window>
