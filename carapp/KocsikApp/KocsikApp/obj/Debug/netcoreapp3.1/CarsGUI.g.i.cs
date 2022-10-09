@@ -69,7 +69,7 @@ namespace KocsikApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/KocsikApp;component/carsgui.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/KocsikApp;V1.0.0.0;component/carsgui.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\CarsGUI.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

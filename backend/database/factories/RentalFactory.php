@@ -18,7 +18,7 @@ class RentalFactory extends Factory
      */
     public function definition()
     {
-        $end_date='start_date'.strtotime('+7 days');
+        //$end_date='start_date'.strtotime('+7 days');
         $car=Car::pluck('id');
         return [
             //'id'=>$faker->,

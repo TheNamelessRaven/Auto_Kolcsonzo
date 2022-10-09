@@ -17,12 +17,12 @@ namespace KocsikApp
     /// </summary>
     public partial class CarsGUI : Window
     {
-        Database db;
         public CarsGUI()
         {
             InitializeComponent();
         }
 
+        Database db;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             try

@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::apiResource('/cars',CarController::class);
-//Route::post('/cars',)
+//Route::apiResource('/cars',CarController::class);
+Route::get('/cars',[CarController::class,'index']);
 Route::post('/cars/{car}',[CarController::class,'update']);//Update car id
 Route::post('/cars/{car}/rent',[CarController::class,'rent']);
